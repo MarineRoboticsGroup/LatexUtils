@@ -1,0 +1,186 @@
+% dehann's latex arguments and commands
+% started 11/26/2013 at 8:08PM on Monday
+
+\usepackage{accents}
+
+% \DeclareMathOperator{\argmax}{argmax}
+% \DeclareMathOperator{\argmin}{argmin}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+
+\DeclareMathOperator*{\solve}{solve}
+
+% Primitives
+
+\newcommand{\cosb}[1]{\cos{\left( #1 \right)}}
+\newcommand{\sinb}[1]{\sin{\left( #1 \right)}}
+
+% Vector and matrix commands
+\DeclareMathOperator{\Tr}{Trace}
+
+\newcommand{\B}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\skewx}[1]{\left[ #1_{\times} \right]}
+
+\newcommand{\dgr}{^{\circ}}
+
+\newcommand{\vb}[1]{\mathbf #1}
+
+\newcommand{\vB}[1]{ \begin{bmatrix} #1_x \\ #1_y \\ #1_z \end{bmatrix} }
+\newcommand{\vBT}[1]{ \begin{bmatrix} #1_x & #1_y & #1_z \end{bmatrix} }
+\newcommand{\vBTn}[1]{ \begin{bmatrix} #1_1 & #1_2 & #1_3 \end{bmatrix} }
+
+\newcommand{\uv}[1]{ \hat{\vb{#1}} }
+
+\DeclareMathOperator{\st}{s.t.}
+
+\newcommand{\skewsym}[1]{\begin{bmatrix} 0 & -#1_z & #1_y \\
+					  #1_z & 0 & -#1_x \\
+					  -#1_y & #1_x & 0\end{bmatrix}}
+
+\newcommand{\bmat}[1]{\begin{bmatrix} #1 \end{bmatrix} }
+
+% Quaternion commands
+\newcommand{\q}[1]{\accentset{\circ}{\mathbf{#1}}}
+\newcommand{\qv}[1]{\begin{bmatrix} #1_0 \\ #1_1 \\ #1_2 \\ #1_3 \end{bmatrix}}
+\newcommand{\qvT}[1]{\begin{bmatrix} #1_0 & #1_1 & #1_2 & #1_3 \end{bmatrix}}
+\newcommand{\qprodMe}[4]{ \begin{bmatrix} #1 & -#2 & -#3 & -#4 \\
+					#2 & #1 & -#4 & #3 \\
+					#3 & #4 & #1 & -#2 \\
+					#4 & -#3 & #2 & #1 \\\end{bmatrix} }
+\newcommand{\qRprodMeConj}[4]{ \begin{bmatrix} #1 & #2 & #3 & #4 \\
+						-#2 & #1 & -#4 & #3 \\
+						-#3 & #4 & #1 & -#2 \\
+						-#4 & -#3 & #2 & #1 \\ \end{bmatrix} }
+\newcommand{\qprodM}[1]{\qprodMe{#1_0}{#1_1}{#1_2}{#1_3}}
+\newcommand{\qprod}[2]{ \qprodM{#1} \qv{#2}}
+
+\newcommand{\qRot}[3]{\q{#1} \q{#2}^{#3} \q{#1}^*}
+
+
+
+
+\newcommand{\fnc}[2]{#1 \left( #2 \right)}
+\newcommand{\f}[2]{#1 \left( #2 \right)}
+\newcommand{\innp}[2]{\langle \, #1, \, #2  \, \rangle}
+\newcommand{\inner}[2]{\langle \, #1, \, #2  \, \rangle}
+
+% \newcommand{\fnc}[3]{#1 \left( #2, #3 \right)}
+
+\newcommand{\bel}[1]{ \left[ \, #1 \, \right]}
+\newcommand{\cbel}[2]{ \left[ \, #1 \, | \, #2 \, \right]}
+
+
+% probability
+
+\newcommand{\E}[2]{\mathbb{E}_{#1} \left[ #2 \right]}
+
+
+\newcommand{\dKL}[2]{\fnc{D_{KL}}{#1 \| #2}}
+
+% figure commands
+
+\newcommand{\fref}[1]{Fig.~\ref{#1}}
+\newcommand{\Fref}[1]{Fig.~\ref{#1}}
+
+
+
+
+
+% names
+
+\newcommand{\MATLAB}{\texttt{MATLAB}${}^\text{\textregistered}$}
+
+
+
+\newcommand{\eqnref}[1]{\textnormal{(}\ref{#1}\text{)}}
+%To print R, the real number symbol
+\newcommand{\R}{\mathbb{R}}
+%To print Q, the rational number symbol
+\newcommand{\Q}{\mathbb{Q}}
+%To print Z, the integer symbol
+\newcommand{\Z}{\mathbb{Z}}
+%To print N, the natural number symbol
+\newcommand{\N}{\mathbb{N}}
+%To print H, the upper half-plane symbol
+\newcommand{\Hp}{\mathbb{H}}
+%To print C, the complex number symbol
+\newcommand{\C}{\mathbb{C}}
+%To get the tensor space T symbol
+\newcommand{\T}{\mathfrak{J}}
+%To get the finite field symbol F
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Ha}{\mathbb{H}}
+\newcommand{\PR}{\mathbb{PR}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\gl}{\mathfrak{gl}}
+
+\newcommand{\Nor}{\mathcal{N}}
+
+
+
+%To get some commonly used mathematical operators
+
+%Differential Topology
+
+%The codimension operator for manifolds, codim
+\DeclareMathOperator{\codim}{codim}
+%The image operator
+\DeclareMathOperator{\image}{Image}
+%The volume operator, vol
+\DeclareMathOperator{\vol}{vol}
+%The topological interior operator, Int
+\DeclareMathOperator{\Int}{Int}
+%The null space operator, N
+\DeclareMathOperator{\Null}{N}
+%Standard sign operator, sign
+\DeclareMathOperator{\sign}{sign}
+%The graph operator; used to denote the graph of a parametrization considered as a manifold
+\DeclareMathOperator{\Graph}{graph}
+%The topological index operator
+\DeclareMathOperator{\ind}{ind}
+%Standard divergence operator
+\DeclareMathOperator{\divergence}{div}
+%Standard curl operator
+\DeclareMathOperator{\curl}{curl}
+%The alternating tensor operator, used for de Rham cohomology in differential topology
+\DeclareMathOperator{\Alt}{Alt}
+
+%Abstract algebra
+
+%The automorphism group of a given group.
+\DeclareMathOperator{\Aut}{Aut}
+%The inner automorphism group of a given group.
+\DeclareMathOperator{\Inn}{Inn}
+%The outer automorphism group
+\DeclareMathOperator{\Out}{Out}
+%The Galois group of an extension.
+\DeclareMathOperator{\Gal}{Gal}
+%The set of embeddings of E into a fixed algebraic closure of F
+\DeclareMathOperator{\Emb}{Emb}
+%Used to denote the set of Sylow p-subgroups of a group.
+\DeclareMathOperator{\Syl}{Syl}
+%Used to get the characteristic subgroup operator, char.
+\DeclareMathOperator{\charac}{char}
+%Used to get the least common multiple abbreviation, lcm.
+\DeclareMathOperator{\lcm}{lcm}
+%Used to get the degree operator, for the degree of a polynomial
+% \DeclareMathOperator{\degree}{degree}
+%Used to get the characteristic of a field
+\DeclareMathOperator{\fch}{ch}
+%The radical of an ideal
+\DeclareMathOperator{\rad}{rad}
+
+\DeclareMathOperator{\Hom}{Hom}
+
+%Used to represent the special linear group
+\DeclareMathOperator{\SL}{SL}
+%Used to represent the general linear group
+\DeclareMathOperator{\GL}{GL}
+%Used to represent the projective special linear group of matrices
+\DeclareMathOperator{\PSsequentialL}{PSL}
+%To get Span
+\DeclareMathOperator{\Span}{Span}
+%To get id
+\DeclareMathOperator{\id}{id}
+
+\DeclareMathOperator{\Norm}{Norm}
