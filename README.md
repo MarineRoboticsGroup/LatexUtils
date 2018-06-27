@@ -9,7 +9,7 @@ Copy or submodule the contents of this repo into your latex project.
 # Makefile
 
 - The `PAPER` field of the `Makefile` must be updated to reflect your project.  
-- Note that the `figures:` and `init:` targets have a one line examples using the program `dia` for vector graphics -- you should configure accordingly.
+- Note that the `figures:`, `init:`, and `ispell:` targets have one line examples using specific programs and files -- you should configure accordingly.
 
 # Contributing
 
